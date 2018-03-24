@@ -63,7 +63,7 @@ public class IGG1Simulator extends JPanel{
 		
 		CaptureTaskDither task = new CaptureTaskDither();
 		timer = new Timer();
-		timer.schedule(task, 500, 1000);
+		timer.schedule(task, 500, 100);
 		
 	}
 
@@ -122,14 +122,14 @@ public class IGG1Simulator extends JPanel{
 		for (int x = 0; x < WIDTH; x++) {
 			for (int y = 0; y < HEIGHT; y++) {
 				if (y%2 == 0) {
-					if (x%2 == 0){
+					if (x%2 == 1){
 						greens[greenIndex] =  (int) (0* (pixList[0+ (x*3) + (WIDTH*3*y)]));
 						greens[greenIndex] =  (int) (1* (pixList[1+ (x*3) + (WIDTH*3*y)]));
 						greens[greenIndex] += (int) (0* (pixList[2+ (x*3) + (WIDTH*3*y)]));
 						greenIndex++;
 					}
 				} else {
-					if (x%2 == 1){
+					if (x%2 == 0){
 						greens[greenIndex] =  (int) (0* (pixList[0+ (x*3) + (WIDTH*3*y)]));
 						greens[greenIndex] =  (int) (1* (pixList[1+ (x*3) + (WIDTH*3*y)]));
 						greens[greenIndex] += (int) (0* (pixList[2+ (x*3) + (WIDTH*3*y)]));
@@ -149,7 +149,7 @@ public class IGG1Simulator extends JPanel{
 		
 		for (int x = 0; x < WIDTH; x++) {
 			for (int y = 0; y < HEIGHT; y++) {
-				if (y%2 == 1) {
+				if (y%2 == 0) {
 					if (x%2 == 0){
 						oranges[orangeIndex] =  (int) (1* (pixList[0+ (x*3) + WIDTH*3*y]));
 						oranges[orangeIndex] += (int) (0* (pixList[1+ (x*3) + WIDTH*3*y]));
@@ -215,27 +215,27 @@ public class IGG1Simulator extends JPanel{
 			for (int y = 0; y < HEIGHT; y++) {
 				if (y%2 == 0) {
 					if (x%2 == 0){
-						pix[0+ (x*3) + (WIDTH*3*y)] =  0;
-						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (greens[greenIndex]);
-						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
-						greenIndex++;
-					} else {
 						pix[0+ (x*3) + (WIDTH*3*y)] =  (int) (oranges[orangeIndex]);
 						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (0.5* oranges[orangeIndex]);
 						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
 						orangeIndex++;
+					} else {
+						pix[0+ (x*3) + (WIDTH*3*y)] =  0;
+						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (greens[greenIndex]);
+						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
+						greenIndex++;
 					}
 				} else {
 					if (x%2 == 0){
-						pix[0+ (x*3) + (WIDTH*3*y)] =  (int) (oranges[orangeIndex]);
-						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (0.5* oranges[orangeIndex]);
-						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
-						orangeIndex++;
-					} else {
 						pix[0+ (x*3) + (WIDTH*3*y)] =  0;
 						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (greens[greenIndex]);
 						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
 						greenIndex++;
+					} else {
+						pix[0+ (x*3) + (WIDTH*3*y)] =  (int) (oranges[orangeIndex]);
+						pix[1+ (x*3) + (WIDTH*3*y)] =  (int) (0.5* oranges[orangeIndex]);
+						pix[2+ (x*3) + (WIDTH*3*y)] =  0;
+						orangeIndex++;
 					}
 				}
 				
