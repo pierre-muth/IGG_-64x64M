@@ -5,5 +5,11 @@
 	<classpathentry kind="lib" path="lib/jna-4.5.1.jar"/>
 	<classpathentry kind="lib" path="lib/jna-platform-4.5.1.jar"/>
 	<classpathentry kind="lib" path="lib/purejavacomm.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/pi4j-core.jar"/>
+	<classpathentry kind="lib" path="lib/pi4j-device.jar"/>
+	<classpathentry kind="lib" path="lib/pi4j-example.jar"/>
+	<classpathentry kind="lib" path="lib/pi4j-gpio-extension.jar"/>
+	<classpathentry kind="lib" path="lib/pi4j-service.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
