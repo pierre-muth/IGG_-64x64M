@@ -1,12 +1,8 @@
 package pixeldust;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.swing.JLabel;
 
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
@@ -20,6 +16,30 @@ import com.pi4j.io.serial.SerialFactory;
  * Written by Phil "PaintYourDragon" Burgess for Adafruit Industries.
  * https://github.com/adafruit/Adafruit_PixelDust
  * @author Pierre Muth
+ * 
+ * @mainpage Particle simulation for "LED sand."
+ *
+ * @section intro_sec Introduction
+ *
+ * This handles the "physics engine" part of a sand/rain simulation.
+ * The term "physics" is used loosely here...it's a relatively crude
+ * algorithm that's appealing to the eye but takes many shortcuts with
+ * collision detection, etc.
+ *
+ * @section dependencies Dependencies
+ *
+ * Not dependent on other libraries for compilation. HOWEVER, this code
+ * does not actually render anything itself and needs to be used in
+ * conjunction with a display-specific library to handle graphics.
+ *
+ * @section author Author
+ *
+ * Written by Phil "PaintYourDragon" Burgess for Adafruit Industries.
+ *
+ * @section license License
+ *
+ * BSD license, all text here must be included in any redistribution.
+ *
  */
 
 public class PixelDustIGG1 {
